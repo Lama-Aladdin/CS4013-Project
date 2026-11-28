@@ -47,10 +47,11 @@ public class Enrolment{
   }
 
   public void advanceYear(){
-    if (yearOfStudy >= p) {
-      //rule thing idk
+    if (yearOfStudy >= programme.getDurationYears()) {
+      throw new IllegalStateException("Already in final year");
     } else {
-      yearOfStudy + 1;
+      yearOfStudy++;
+    }
   }
 
   
