@@ -17,6 +17,6 @@ public class Faculty extends Person {
 
 @Override
   public String getRole() {
-    return "Faculty"
+    return "Faculty";
       }
 }
