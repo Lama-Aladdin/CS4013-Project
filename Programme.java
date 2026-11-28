@@ -40,7 +40,7 @@ public abstract class Programme { //why do abstract classes need public/private
     return name;
   }
 
-  public int getDurationyears(){
+  public int getDurationYears(){
     return durationYears;
   }
 
@@ -48,9 +48,7 @@ public abstract class Programme { //why do abstract classes need public/private
     return department;
   }
 
-  //?
-  public abstract String getLevel(){
-    return "level";    
+  public abstract String getLevel(){ 
   }  
   
   
