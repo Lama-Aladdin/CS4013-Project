@@ -10,8 +10,8 @@ a parent method
 Tasks: 
 Student.java: 
 extends Person. ✅ 
-The constructor takes id, name and email and passes them to super(...).
-It overrides getRole() to return "Student".
+The constructor takes id, name and email and passes them to super(...). ✅
+It overrides getRole() to return "Student". ✅
 Add Javadoc on both classes, both constructors and getRole()
 
 */
@@ -19,10 +19,9 @@ Add Javadoc on both classes, both constructors and getRole()
 package ie.ul.records.model;
 
 public class Student extends Person {
-  public String role; //? Role? studies?
 
   public Student( String id, String name, String email){
-    super(Person); //?
+    super(id,name,email); //?
     }
 
   @Override
