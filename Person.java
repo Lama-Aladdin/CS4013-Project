@@ -4,28 +4,31 @@ Private fields with public getters -> other classes can read date but not change
 */
 
 /* Tasks:
-fields: id, name, email (all String)
-a constructor that sets all three
-a getter for each field
-an abstract method getRole() that returns a String
-Javadoc comments ?
+fields: id, name, email (all String) ✅ 
+a constructor that sets all three ✅ -> no reutrn type
+a getter for each field ✅ -> public for this one
+an abstract method getRole() that returns a String ✅ -> an abstract method has no body
+Javadoc comments *
   */
 
-package ie.ul.records.model; // ??
+package ie.ul.records.model; // ?? change 
 
 public abstract class Person {
-  public String name;
+  private String name;
   private String email;
-  private String id; // int?
+  private String id; // int? ID is label, not something to do math with
 
-  // this = getter? for what?
-  public void Person(String name, String email, String id) {
+  /* this = constructor. runs once when an object (new student (n,e,id)) is created. this. puts
+  values into the field */
+  public Person(String name, String email, String id) {
     this.name = name;
     this.email = email;
     this.id = id;
     }
 
-  //why do we do these parts? will it be required in other classes?
+  /*Getters, theyre public. the only way other classes can read them.
+Example: Transcript calls student.getName()
+ */
   public String getName() {
     return name;
   }
@@ -34,13 +37,12 @@ public abstract class Person {
     return email;
   }
 
-  public int getID(){
+  public String getID(){
     return id;
   }
 
-  //"type" of person (student, teacher, staff, etc.)
-  public abstract String getType() {
-    return "Person";
+  //an abstract method has no body
+  public abstract String getRole() {
   }
 }
 
