@@ -9,14 +9,20 @@ It overrides getRole() to return "Student".
 package ie.ul.records.model;
 
 public class Faculty extends Person {
-  // am i supposed to add stuff like public string teacher, etc?
+   private Department department;
 
-  public Faculty(String id, String name, String email){
+  public Faculty(String id, String name, String email, Department department){
     super(id, name, email); //? i think ive fixed it now?
+    this.department = department;
   }
 
 @Override
   public String getRole() {
     return "Faculty";
       }
-}
+
+  public Department getDepartment(){
+    return department;
+  }
+
+
