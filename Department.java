@@ -28,25 +28,27 @@ and add getDepartment().
 
 package ie.ul.records.model;
 import java.util.List;
+import java.util.ArrayList; //mistake
 
 public class Department {
   private String name;
   private String code;
-  private List<String> staff = new ArrayList<>(); 
+  private List<Faculty> staff = new ArrayList<>(); //starts empty, hold faculty object
 
   //Constructor?
-  public Department(String name, String code, List staff){
-    //List starting empty?
+  public Department(String name, String code){
+    this.code = code;
+    this.name = name;
   }
 
 
   //getters:
-  public Department(String name){
-    this.name = name;
+  public String getCode(){
+    return code;
   }
 
-  public Department(String code){
-    this.code = code;
+  public String getName(){
+    return name;
   }
 
   //why no getter for list?
@@ -54,13 +56,19 @@ public class Department {
     staff.add(f) // ? 
   }
 
-  public void getStaff(){
-    return staff;
+  public List<Faculty> getStaff(){
+    return new ArrayList<>(staff);
   }
 
-  public void findStaff(String id){
-    return staff.equals(id);
+  public Faculty findStaff(String id){
+    for (Faculty f : staff) {
+      if (f.getID().equals(id)) {
+        return f;
+      }
+   }
+    return null;
   }
+}
 
 
 
